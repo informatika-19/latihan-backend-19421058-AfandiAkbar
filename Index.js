@@ -1,6 +1,19 @@
 const express = require ('express')
 const app = express()
 const bodyParser = require('body-parser')
+const mongoose= require ('mongoose')
+
+mongoose.connect('mongodb://localhost:27017/Latihan', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+    useCreateIndex: true
+}).then (() => {
+    console.log('Connect to DB')
+}).catch((e)=>{
+    console.log(e)
+    console.log('Unconnected to DB')
+})
 
 app.use(bodyParser.json({
     extends: true,
@@ -29,11 +42,13 @@ app.get('/daerah/:namaDaerah/:id', (req, res) =>{
 
 })
 
-app.post('/register',(req, res) =>{
-    console.log(req.body)
-    res.json(req.body)
-})
+//app.post('/register',(req, res) =>{
+    //console.log(req.body)
+    //res.json(req.body)
+//})
+
+app.use('/user',require('./routes/User'))
 
 app.listen(3000, () =>{
-    console.log('Server Mulai')
+    console.log('Server Started')
 })

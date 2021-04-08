@@ -13,7 +13,18 @@
   "author": "Afandi Akbar",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "body-parser": "^1.19.0",
-    "express": "^4.17.1"
-  }
+    "express": "^4.17.1",
+    "mongoose": "^5.12.3"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/informatika-19/latihan-backend-19421058-AfandiAkbar.git"
+  },
+  "bugs": {
+    "url": "https://github.com/informatika-19/latihan-backend-19421058-AfandiAkbar/issues"
+  },
+  "homepage": "https://github.com/informatika-19/latihan-backend-19421058-AfandiAkbar#readme"
 }
