@@ -2,6 +2,7 @@ const express = require ('express')
 const app = express()
 const bodyParser = require('body-parser')
 const mongoose= require ('mongoose')
+const cors= require ('cors')
 
 mongoose.connect('mongodb://localhost:27017/Latihan', {
     useNewUrlParser: true,
@@ -14,6 +15,9 @@ mongoose.connect('mongodb://localhost:27017/Latihan', {
     console.log(e)
     console.log('Unconnected to DB')
 })
+
+app.use(cors());
+app.options("*", cors());
 
 app.use(bodyParser.json({
     extends: true,
